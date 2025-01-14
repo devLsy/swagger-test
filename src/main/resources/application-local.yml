@@ -3,6 +3,7 @@ server:
 
 spring:
   autoconfigure:
+    #db연결 x
     exclude:
       - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
 

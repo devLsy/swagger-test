@@ -80,7 +80,7 @@ public class UserServiceImpl2 implements UserService{
         response.setTotalCount(56);
         response.setHasNext(page * size < 56);
 
-        log.info("list = [{}]", ToStringBuilder.reflectionToString(response, ToStringStyle.JSON_STYLE));
+        log.info("list => [{}]", ToStringBuilder.reflectionToString(response, ToStringStyle.JSON_STYLE));
 
         return response;
     }
