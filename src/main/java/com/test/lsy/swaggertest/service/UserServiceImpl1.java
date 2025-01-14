@@ -12,9 +12,9 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
-@Service
+@Service("service1")
 @Slf4j
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl1 implements UserService{
 
     @Override
     public ApiResponse getList(int page, int size) {
