@@ -5,8 +5,6 @@ import com.test.lsy.swaggertest.model.Chronology;
 import com.test.lsy.swaggertest.model.RegDate;
 import com.test.lsy.swaggertest.subscribe.model.Subscrption;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -49,7 +47,8 @@ public class SubscriptionServiceImpl1 implements SubscriptionService {
         response.setTotalCount(56);
         response.setHasNext(page * size < 56);
 
-        log.info("list = [{}]", ToStringBuilder.reflectionToString(response, ToStringStyle.JSON_STYLE));
+//        log.info("list = [{}]", ToStringBuilder.reflectionToString(response, ToStringStyle.JSON_STYLE));
+        log.info("list => [{}]", response);
 
         return response;
     }

@@ -19,12 +19,12 @@ public class ProductController {
 
     private final ProductService service;
 
-    public ProductController(@Qualifier("service1") ProductService service) {
+    public ProductController(@Qualifier("productService1") ProductService service) {
         this.service = service;
     }
 
     @GetMapping("")
-    @Operation(summary = "구독이력 조회", description = "구독 이력을 조회한다.")
+    @Operation(summary = "상품정보 조회", description = "상품정보를 조회한다.")
     @ApiResponses(value = {
     })
     public ApiResponse getList(
