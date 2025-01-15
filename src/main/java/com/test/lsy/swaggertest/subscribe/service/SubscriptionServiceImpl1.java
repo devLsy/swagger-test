@@ -1,9 +1,9 @@
-package com.test.lsy.swaggertest.service;
+package com.test.lsy.swaggertest.subscribe.service;
 
 import com.test.lsy.swaggertest.model.ApiResponse;
 import com.test.lsy.swaggertest.model.Chronology;
 import com.test.lsy.swaggertest.model.RegDate;
-import com.test.lsy.swaggertest.model.Subscrption;
+import com.test.lsy.swaggertest.subscribe.model.Subscrption;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
@@ -12,9 +12,9 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
-@Service("service1")
+@Service("subscribeService1")
 @Slf4j
-public class UserServiceImpl1 implements UserService{
+public class SubscriptionServiceImpl1 implements SubscriptionService {
 
     @Override
     public ApiResponse getList(int page, int size) {

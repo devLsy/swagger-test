@@ -8,6 +8,7 @@ spring:
       - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
 
   swagger-ui:
+    #접속 url: http://localhost:8080/swagger-ui/index.html
     enabled: true
 
 

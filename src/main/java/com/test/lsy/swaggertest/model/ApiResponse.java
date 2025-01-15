@@ -1,12 +1,16 @@
 package com.test.lsy.swaggertest.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Data
-public class ApiResponse extends BaseObj{
-    private List<Subscrption> data;
+@NoArgsConstructor
+@AllArgsConstructor
+public class ApiResponse<T> {
+    private List<T> data;
     private int page;
     private int size;
     private int totalCount;

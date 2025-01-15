@@ -1,27 +1,29 @@
-package com.test.lsy.swaggertest.web;
+package com.test.lsy.swaggertest.product.web;
 
 import com.test.lsy.swaggertest.model.ApiResponse;
-import com.test.lsy.swaggertest.service.UserService;
+import com.test.lsy.swaggertest.product.service.ProductService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Slf4j
-public class ExamController {
+@RequestMapping("/product")
+public class ProductController {
 
-    private final UserService service;
+    private final ProductService service;
 
-    public ExamController(@Qualifier("service2") UserService service) {
+    public ProductController(@Qualifier("service1") ProductService service) {
         this.service = service;
     }
 
-    @GetMapping("/")
+    @GetMapping("")
     @Operation(summary = "구독이력 조회", description = "구독 이력을 조회한다.")
     @ApiResponses(value = {
     })

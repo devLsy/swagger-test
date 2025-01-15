@@ -1,9 +1,9 @@
-package com.test.lsy.swaggertest.service;
+package com.test.lsy.swaggertest.subscribe.service;
 
 import com.test.lsy.swaggertest.model.ApiResponse;
 import com.test.lsy.swaggertest.model.Chronology;
 import com.test.lsy.swaggertest.model.RegDate;
-import com.test.lsy.swaggertest.model.Subscrption;
+import com.test.lsy.swaggertest.subscribe.model.Subscrption;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
@@ -12,9 +12,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Service("service2")
+@Service("subscribeService2")
 @Slf4j
-public class UserServiceImpl2 implements UserService{
+public class SubscriptionServiceImpl2 implements SubscriptionService {
 
     @Override
     public ApiResponse getList(int page, int size) {
@@ -48,7 +48,7 @@ public class UserServiceImpl2 implements UserService{
                         true
                 )
         );
-        // stream API 사용 > 생성자 방식
+        // stream API 사용 > 생성자 + setter 방식
 //        List<Subscrption> subscriptions = databaseResult.stream().map(data -> {
 //                    Subscrption dto = new Subscrption();
 //                    dto.setSubscriptionsSeq(data.getSubscriptionsSeq());
@@ -73,7 +73,7 @@ public class UserServiceImpl2 implements UserService{
                 )
                 .collect(Collectors.toList());
 
-        ApiResponse response = new ApiResponse();
+        ApiResponse<Subscrption> response = new ApiResponse();
         response.setData(subscriptions);
         response.setPage(page);
         response.setSize(size);
@@ -81,6 +81,7 @@ public class UserServiceImpl2 implements UserService{
         response.setHasNext(page * size < 56);
 
         log.info("list => [{}]", ToStringBuilder.reflectionToString(response, ToStringStyle.JSON_STYLE));
+//        log.info("list => [{}]", response);
 
         return response;
     }

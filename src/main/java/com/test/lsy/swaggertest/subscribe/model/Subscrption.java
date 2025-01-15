@@ -1,5 +1,7 @@
-package com.test.lsy.swaggertest.model;
+package com.test.lsy.swaggertest.subscribe.model;
 
+import com.test.lsy.swaggertest.model.BaseObj;
+import com.test.lsy.swaggertest.model.RegDate;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -7,9 +9,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 @Schema(description = "구독정보")
 public class Subscrption  extends BaseObj {
     @Schema(description = "구독번호")
