@@ -1,6 +1,6 @@
 package com.test.lsy.swaggertest.subscribe.service;
 
-import com.test.lsy.swaggertest.model.ApiResponse;
+import com.test.lsy.swaggertest.model.ApiResponse1;
 import com.test.lsy.swaggertest.model.Chronology;
 import com.test.lsy.swaggertest.model.RegDate;
 import com.test.lsy.swaggertest.subscribe.model.Subscrption;
@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 public class SubscriptionServiceImpl2 implements SubscriptionService {
 
     @Override
-    public ApiResponse getList(int page, int size) {
+    public ApiResponse1 getList(int page, int size) {
         // db에서 가져온 값이라고 가정
         List<Subscrption> databaseResult = List.of(
                 new Subscrption(
@@ -71,17 +71,17 @@ public class SubscriptionServiceImpl2 implements SubscriptionService {
                 )
                 .collect(Collectors.toList());
 
-        ApiResponse<Subscrption> response = new ApiResponse();
-        response.setData(subscriptions);
-        response.setPage(page);
-        response.setSize(size);
-        response.setTotalCount(56);
-        response.setHasNext(page * size < 56);
+        ApiResponse1<Subscrption> subscrptions = new ApiResponse1();
+        subscrptions.setData(subscriptions);
+        subscrptions.setPage(page);
+        subscrptions.setSize(size);
+        subscrptions.setTotalCount(56);
+        subscrptions.setHasNext(page * size < 56);
 
 //        log.info("list => [{}]", ToStringBuilder.reflectionToString(response, ToStringStyle.JSON_STYLE));
-        log.info("list => [{}]", response);
+        log.info("list => [{}]", subscrptions);
 
-        return response;
+        return subscrptions;
     }
 
     private RegDate createRegDate(int year, int month, int day, int hour, int minute, int second, String dayOfWeek) {

@@ -1,6 +1,6 @@
 package com.test.lsy.swaggertest.subscribe.web;
 
-import com.test.lsy.swaggertest.model.ApiResponse;
+import com.test.lsy.swaggertest.model.ApiResponse1;
 import com.test.lsy.swaggertest.subscribe.service.SubscriptionService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -27,7 +27,7 @@ public class SubscriptionController {
     @Operation(summary = "구독이력 조회", description = "구독 이력을 조회한다.")
     @ApiResponses(value = {
     })
-    public ApiResponse getList(
+    public ApiResponse1 getList(
             @Parameter(description = "조회할 페이지 번호", required = true, example = "1")
             @RequestParam(name = "page") int page,
 

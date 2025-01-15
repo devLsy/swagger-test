@@ -8,7 +8,7 @@ import java.util.List;
 
 @Data
 @NoArgsConstructor @AllArgsConstructor
-public class ApiResponse<T> extends BaseObj{
+public class ApiResponse2<T extends BaseObj>{
     private List<T> data;
     private int page;
     private int size;
