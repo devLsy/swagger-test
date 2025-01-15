@@ -1,6 +1,7 @@
 package com.test.lsy.swaggertest.product.service;
 
 import com.test.lsy.swaggertest.model.ApiResponse1;
+import com.test.lsy.swaggertest.model.ApiResponse2;
 import com.test.lsy.swaggertest.product.model.Product;
 
 public interface ProductService {
