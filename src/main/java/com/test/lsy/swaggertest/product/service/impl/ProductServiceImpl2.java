@@ -24,17 +24,31 @@ public class ProductServiceImpl2 implements ProductService {
                 new Product("3", "실버 상품입니다.", "골드", 9900)
                 );
 
+        //for 문
+//        for (Product data : databaseResult) {
+//            Product build = Product.builder()
+//                    .productSeq(data.getProductSeq())
+//                    .description(data.getDescription())
+//                    .productName(data.getProductName())
+//                    .build();
+//            products.add(build);
+//        }
         List<Product> products = databaseResult.stream()
                 .map(data -> Product.builder()
                         .productSeq(data.getProductSeq())
                         .description(data.getDescription())
                         .productName(data.getProductName())
+                        .price(data.getPrice())
                         .build()
                 )
                 .collect(Collectors.toList());
 
-
-
+        ApiResponse1<Product> response = new ApiResponse1<>();
+        response.setData(products);
+        response.setPage(page);
+        response.setSize(size);
+        response.setTotalCount(56);
+        response.setHasNext(page * size < 56);
 //        log.info("list => [{}]", ToStringBuilder.reflectionToString(response, ToStringStyle.JSON_STYLE));
         log.info("list => [{}]", response);
 

@@ -1,6 +1,6 @@
 package com.test.lsy.swaggertest.subscribe.service;
 
-import com.test.lsy.swaggertest.model.ApiResponse1;
+import com.test.lsy.swaggertest.model.ApiResponse3;
 import com.test.lsy.swaggertest.model.Chronology;
 import com.test.lsy.swaggertest.model.RegDate;
 import com.test.lsy.swaggertest.subscribe.model.Subscrption;
@@ -15,7 +15,7 @@ import java.util.List;
 public class SubscriptionServiceImpl1 implements SubscriptionService {
 
     @Override
-    public ApiResponse1 getList(int page, int size) {
+    public ApiResponse3 getList(int page, int size) {
 
         List<Subscrption> subscriptions = new ArrayList<>();
 
@@ -40,12 +40,12 @@ public class SubscriptionServiceImpl1 implements SubscriptionService {
         subscriptions.add(subscription1);
         subscriptions.add(subscription2);
 
-        ApiResponse1 response = new ApiResponse1();
-        response.setData(subscriptions);
-        response.setPage(page);
-        response.setSize(size);
-        response.setTotalCount(56);
-        response.setHasNext(page * size < 56);
+        ApiResponse3 response = new ApiResponse3();
+//        response.setData(subscriptions);
+//        response.setPage(page);
+//        response.setSize(size);
+//        response.setTotalCount(56);
+//        response.setHasNext(page * size < 56);
 
 //        log.info("list = [{}]", ToStringBuilder.reflectionToString(response, ToStringStyle.JSON_STYLE));
         log.info("list => [{}]", response);
