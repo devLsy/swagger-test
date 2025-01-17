@@ -65,6 +65,7 @@ public class SubscriptionServiceImpl3 implements SubscriptionService {
         response.setNextSubscriptionProductSeq("2");
         response.setNextSubscriptionProductName("골드 상품");
         response.setNextChangeDate("2025-02-04");
+        response.setNextBillingDate(nextBillingDate);
         response.setHasStandbySubscription(false);
 
         return response;

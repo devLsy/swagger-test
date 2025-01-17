@@ -21,11 +21,11 @@ public class ApiResponse3<T> {
 
     private CurrentSubscriptionStartDate currentSubscriptionStartDate;
     private CurrentSubscriptionEndDate currentSubscriptionEndDate;
+    private NextBillingDate nextBillingDate;
 
     private String currentSubscriptionStatus;
     private String nextSubscriptionProductSeq;
     private String nextSubscriptionProductName;
     private String nextChangeDate;
-    private NextBillingDate nextBillingDate;
     private boolean hasStandbySubscription;
 }
