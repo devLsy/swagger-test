@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -18,6 +20,7 @@ public class User {
 
     private Address address;
     private Company company;
+    private Role role;
 
     private String phone;
     private String website;
@@ -48,5 +51,13 @@ public class User {
         private String name;
         private String catchPhrase;
         private String bs;
+    }
+
+    @Data
+    @NoArgsConstructor @AllArgsConstructor
+    @Builder
+    public static class Role {
+        private String roleName;
+        private List<String> permissions;
     }
 }
