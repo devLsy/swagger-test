@@ -206,6 +206,7 @@ public class UserServiceImpl implements UserService{
         list.add(user2);
         list.add(user3);
         list.add(user4);
+        list.add(user5);
 
         List<User> result1 = list.stream()
                 .map(data -> User.builder()
