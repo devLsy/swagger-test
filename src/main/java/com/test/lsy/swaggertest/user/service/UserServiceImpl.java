@@ -17,12 +17,12 @@ public class UserServiceImpl implements UserService{
     @Override
     public ApiResponse4 getList(int page, int size) {
 
+        //1
         User.Role role1 = User.Role.builder()
                 .roleName("ADMIN")
                 .permissions(List.of("CREATE_USER", "DELETE_USER", "UPDATE_USER", "READ_USER", "ACCESS_ADMIN_DASHBOARD"))
                 .build();
 
-        //1
         User.Address.Geo geo1 = User.Address.Geo.builder()
                 .lat("-37.3159")
                 .lng("81.1496")
@@ -225,7 +225,7 @@ public class UserServiceImpl implements UserService{
 
 
         ApiResponse4<User> response = new ApiResponse4<>();
-        response.setCode(HttpStatus.OK);
+        response.setStatus(HttpStatus.OK);
         response.setError("");
         response.setMessage("정상입니다.");
         response.setData(result1);

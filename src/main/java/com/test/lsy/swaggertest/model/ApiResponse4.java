@@ -15,7 +15,7 @@ import java.util.List;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ApiResponse4<T> {
 
-    private HttpStatus code;
+    private HttpStatus status;
     private String error;
     private String message;
 
